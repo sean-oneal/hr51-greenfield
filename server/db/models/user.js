@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/users');
+mongoose.Promise = Promise;
 
 const userSchema = new mongoose.Schema({
   name: String,
-  age: Number
+  age: Number,
+  IP: String,
+  category: String
 });
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);

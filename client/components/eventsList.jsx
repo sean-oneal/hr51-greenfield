@@ -1,14 +1,17 @@
 import React from 'react';
-import ReactBootstrap from 'react-bootstrap';
-import { ListItem } from './eventListItem.jsx';
+import { EventListItem } from './eventListItem.jsx';
 
-EventsList = (props) => {
+const EventsList = (props) => {
+  console.log(props);
   return (
-    <div>
-      (props.map(event => {
-        <ListItem event={event} />
-      }))
-    </div>
+    <ul>
+      {props.events.map(event => {
+        console.log(event);
+        return (
+        <EventListItem event={event} key={eventId} removeEvent={props.removeEvent} />
+        );
+      })};
+    </ul>
   );
 };
 

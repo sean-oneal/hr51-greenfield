@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactBootstrap from 'react-bootstrap';
 
-EventListItem = (props) => {
-
+const EventListItem = (props) => {
   return (
-    <ul className='item' onClick={function() { props.deleteUser(props.event.name); }}>
-      <div> {props.event.name} </div>
-
+    <ul className='item' onClick={function() { props.removeEvent(props.event.title); }}>
+      <div>
+        <li>{props.event.title}</li>
+        <li>{props.event.city_name}</li>
+      </div>
     </ul>
   );
 };
 
-export { ListItem };
+export { EventListItem } ;

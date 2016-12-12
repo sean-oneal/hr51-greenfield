@@ -1,37 +1,31 @@
 import React from 'react';
-import ReactBootstrap from 'react-bootstrap';
 
 class EventInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
       category: ''
     };
   }
   handleChange(e) {
-    this.setState({ value: e.target.value });
+    this.setState({value: e.target.value });
+  }
+  handleClick() {
+    this.props.addEvent(this.state);
+    this.setState({
+      category: ''
+    });
   }
   render() {
     return (
         <form>
-        <FormGroup
-          controlId="formBasicText"
-          // validationState={this.getValidationState()}
-        >
-          <ControlLabel>Enter a Category:</ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.value}
-            placeholder="Enter a category"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-        </FormGroup>
+        <label>Enter a category:</label>
+        <input type="text" value={this.state.category} placeholder="event category" onChange={this.handleChange.bind(this)}></input>
+        <button type="button-default" onClick={this.props.addEvent.bind(this)}></button>
       </form>
     );
   }
 }
 
 
-export { EventInput};
+export { EventInput };
