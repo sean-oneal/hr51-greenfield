@@ -22,7 +22,7 @@ module.exports = {
       console.error('Error in saving User', error);
     });
 
-    // in para, runs a request to api while adding to db
+    // in parallel, runs a request to api while adding to db
     //get to api from server with axios
     axios.get('http://api.eventful.com/json/events/search?app_key=' + apiKey + '&c=' + category + '&date=' + date + '&page_size=4' + '&page_number=' + page + '&location=' + location)
     .then((response) => {
