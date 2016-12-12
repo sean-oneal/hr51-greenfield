@@ -15,7 +15,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static('../client'));
 
 router(app);
 
