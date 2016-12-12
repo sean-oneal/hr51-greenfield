@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // mongoose.connect('mongodb://localhost/users');
 
 const userSchema = new mongoose.Schema({
-  name:  String,
+  name: String,
   age: Number
 });
 

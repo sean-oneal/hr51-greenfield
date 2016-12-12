@@ -2,7 +2,7 @@ const axios = require('axios');
 const apiKey = require('../apiKey.js');
 
 module.exports = {
-  getEvent : (req, res) => {
+  getEvent: (req, res) => {
     let category = req.query.category;
     let date = req.query.date || 'Today';
     let page = req.query.page || 1;
@@ -19,7 +19,7 @@ module.exports = {
     })
     .catch((error) => {
       console.log(error);
-    })
-  } 
+    });
+  }
 
 };
