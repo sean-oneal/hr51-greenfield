@@ -29,14 +29,27 @@ class App extends React.Component {
     });
   }
   addEvent(newEvent) {
-    this.setState({
-      eventList: this.state.eventList.concat(newEvent)
+    $.ajax({
+      url: 'event', //TODO: add in the event details
+      method: 'GET',
+      dataType: 'json',
+      data: {
+        category: newEvent
+      },
+      success: function(data) {
+        this.setState({
+          eventList: this.state.eventList.concat(data)
+        });
+      },
+      error: function(xhr, textStatus, error) {
+        console.log('there\'s been an error retrieving the data');
+      }
     });
   }
   removeEvent(deleteEvent) {
     this.setState({
       eventList: this.state.eventList.filter( event => {
-        return event.name !== deleteEvent;
+        return event.title !== deleteEvent;
       })
     });
   }

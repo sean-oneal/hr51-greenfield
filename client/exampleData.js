@@ -1,5 +1,4 @@
-const exampleData =
-[
+const exampleData = [
   {
     eventId: 1,
     title: "Sailing",
@@ -28,6 +27,6 @@ const exampleData =
     title: "Kayaking",
     city_name: "Sausalito",
   }
-]
+];
 
 module.exports = exampleData;

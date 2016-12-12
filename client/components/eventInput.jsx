@@ -8,7 +8,7 @@ class EventInput extends React.Component {
     };
   }
   handleChange(e) {
-    this.setState({value: e.target.value });
+    this.setState({category: e.target.value });
   }
   handleClick() {
     this.props.addEvent(this.state);
@@ -18,10 +18,10 @@ class EventInput extends React.Component {
   }
   render() {
     return (
-        <form>
+      <form>
         <label>Enter a category:</label>
         <input type="text" value={this.state.category} placeholder="event category" onChange={this.handleChange.bind(this)}></input>
-        <button type="button-default" onClick={this.props.addEvent.bind(this)}></button>
+        <button type="button-default" onClick={this.props.addEvent.bind(this)}>Search</button>
       </form>
     );
   }
