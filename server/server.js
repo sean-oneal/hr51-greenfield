@@ -9,12 +9,6 @@ mongoose.connect('mongodb://localhost/broccoli');
 const db = mongoose.connection;
 const User = require('./db/models/user');
 
-// const fakeDATA = {
-// 	name: 'Jennifer',
-// 	searches: String,
-//	savedEvents: Mixed
-// }
-
 //mw
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
